@@ -1,0 +1,65 @@
+// khởi tạo dự án
+composer create-project laravel/laravel QuanLyVanBan
+
+// truy cập vào dự án vừa khởi tạo
+cd QuanLyVanBan
+
+// khởi tạo giao diện đăng nhập/ đăng kí
+composer require laravel/ui
+
+// thêm bootstrap vào giao diện đăng nhập/ đăng kí
+php artisan ui bootstrap --auth
+
+// Please run "npm install && npm run dev" to compile your fresh scaffolding.
+npm install
+npm run dev
+
+// khởi tạo cơ sở dữ liệu có thể import file sql có sẵn
+// nếu không có thể dùng "php artisan migrate" để khởi tạo các bảng có sẵn của laravel
+
+// thay đổi tên CSDL trong tệp .env bằng tên CSDL vừa tạo
+// thay đổi múi giờ cho phù hợp với mùi giờ quốc gia tại tệp config/app.php
+'timezone' => 'Asia/Ho_Chi_Minh',
+
+// có thể khởi chạy dự án và tiến hành đăng kí tài khoản cho dự án để có thể sử dụng
+php artisan serve
+
+// cài đặt giao diện mẫu Admin LTE phiên bản 3.0.5
+npm install admin-lte@v3.0.5 --save
+
+// tại tệp resources/js/bootstrap.js thêm lệnh sau lệnh require('bootstrap'); để tạo ra file js kèm theo cho dự án 
+( window.Popper = require('popper.js').default;
+window.$ = window.jQuery = require('jquery'); ) nếu chưa có trong try catch
+require('admin-lte');
+
+// tại tệp resources/sass/app.scss thêm lệnh để tạo ra file css kèm theo cho dự án 
+// tệp được gọi nằm trong node_modules/admin-lte/dist/css/adminlte.css
+@import '~admin-lte/dist/css/adminlte.css'; 
+
+//copy source từ trang https://adminlte.io/themes/v3/starter.html để tạo thành file master.blade.php trong thư mục resources/views/layouts
+
+// khởi chạy lệnh để tạo ra các file cần thiết cho giao diện master layout, các file được tạo ra trong thư mục public/css và public/js
+npm run dev
+
+// thay đổi các đoạn script và css cho phù hợp
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
+
+<script src="{{asset('js/app.js')}}"></script>
+
+// thay đổi file kế thừa của home từ layouts.app sang layouts.master
+
+// cài đặt font-awesome để lấy các icon cho dự án
+npm install --save @fortawesome/fontawesome-free
+
+// tại tệp resources/sass/app.scss thêm lệnh trước bootstrap để có thể sử dụng fontawesome vừa cài đặt
+$fa-font-path:"../webfonts";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+// khởi chạy lệnh để tạo ra các file cần thiết cho giao diện master layout
+npm run dev
+
+// giao diện dự án tương đối hoàn thành
