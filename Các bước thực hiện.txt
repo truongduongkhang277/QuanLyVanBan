@@ -70,3 +70,29 @@ npm run dev
 // thêm thuộc tính gender ở filltable tại tệp app/models/user
 
 // xác thực email
+// b1 implements MustVerifyEmail tại file App/Models/User
+// b2 thêm các route cần thiết
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('email/verify/{id}/{hash}', function(EmailVerificationRequest $request){
+    $request->fulfill();
+
+    return redirect('home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+//b3 thêm thông tin email tại file .env
+//b4 cài đặt lại email cho phù hợp
+- cài đặt -> xem tất cả chế độ cài đặt -> chuyển tiếp và POP/IMAP 
++ 1. trạng thái -> bật chức năng tải POP
++ quyền truy cập imap -> bật IMAP 
+-> lưu thay đổi
+
+- truy cập less secure apps -> quyền truy cập của ứng dụng kém an toàn -> bật
