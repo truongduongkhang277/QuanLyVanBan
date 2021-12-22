@@ -28,7 +28,7 @@ Route::get('/email/verify', function () {
     return view('auth.verify');
 })->middleware('auth')->name('verification.notice');
 
-Route::get('email/verify/{id}/{hash}', function(EmailVerificationRequest $request){
+Route::get('email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
 
     return redirect('home');
@@ -39,3 +39,10 @@ Route::post('/email/verification-notification', function (Request $request) {
 
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+// giao diện admin
+Route::get('admin/login', function () {
+    return view('admin.login');
+});
+
+

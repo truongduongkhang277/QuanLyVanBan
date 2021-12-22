@@ -96,3 +96,17 @@ Route::post('/email/verification-notification', function (Request $request) {
 -> lưu thay đổi
 
 - truy cập less secure apps -> quyền truy cập của ứng dụng kém an toàn -> bật
+
+// tạo giao diện đăng nhập của admin
+// b1 đặt route
+Route::get('admin/login', function () {
+    return view('admin.login');
+});
+
+//b2 tạo folder admin, tạo file login.blade.php trong folder vừa tạo
+
+//b3 xử lý giao diện admin
+
+//b4 tạo file AdminController
+php artisan make:controller AdminController
+
