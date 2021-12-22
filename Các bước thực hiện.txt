@@ -63,3 +63,10 @@ $fa-font-path:"../webfonts";
 npm run dev
 
 // giao diện dự án tương đối hoàn thành
+
+// thêm $table->tinyInteger('gender'); để tạo dòng giới tính trong bảng dữ liệu -> thay đổi config/database mysql: 'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
+// khởi chạy lệnh migrate:fresh để làm mới database
+// chỉnh sửa giao diện đăng kí -> thêm radio chọn giới tính cho user khi đăng kí,
+// thêm thuộc tính gender ở filltable tại tệp app/models/user
+
+// xác thực email
