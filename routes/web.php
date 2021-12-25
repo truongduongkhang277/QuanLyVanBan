@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -45,4 +46,4 @@ Route::get('admin/login', function () {
     return view('admin.login');
 });
 
-
+Route::post('admin/login', [AdminController::class, 'loginPost'])->name('admin.loginPost');
