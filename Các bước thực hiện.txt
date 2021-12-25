@@ -110,3 +110,5 @@ Route::get('admin/login', function () {
 //b4 tạo file AdminController
 php artisan make:controller AdminController
 
+
+
