@@ -110,5 +110,10 @@ Route::get('admin/login', function () {
 //b4 tạo file AdminController
 php artisan make:controller AdminController
 
+// cắt sidebar của giao diện
+// b1 tạo file menu trong config để khai báo các menu được sử dụng
+// cắt sidebar thành 1 file mới trong folder admin
+// include đến file vừa cắt
 
+// cắt footer tương tự như sidebar
 
