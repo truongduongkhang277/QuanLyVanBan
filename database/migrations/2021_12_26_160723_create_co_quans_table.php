@@ -13,7 +13,7 @@ class CreateCoQuansTable extends Migration
      */
     public function up()
     {
-        Schema::create('co_quans', function (Blueprint $table) {
+        Schema::create('co_quan', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

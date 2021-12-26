@@ -115,7 +115,7 @@ return [
     [
         'label' => 'Đổi mật khẩu',
         'route' => 'home',
-        'icon' => '<fas fa-key'
+        'icon' => 'fas fa-key'
     ],
     [
         'label' => 'Đăng xuất',

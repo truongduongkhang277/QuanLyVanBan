@@ -110,10 +110,20 @@ Route::get('admin/login', function () {
 //b4 tạo file AdminController
 php artisan make:controller AdminController
 
+//b5 tạo provider admin trong tệp config.auth
+//b6 sau khi có provider rồi thì chúng ta tạo guards ở phía trên
+
 // cắt sidebar của giao diện
 // b1 tạo file menu trong config để khai báo các menu được sử dụng
-// cắt sidebar thành 1 file mới trong folder admin
-// include đến file vừa cắt
+// b2 cắt sidebar thành 1 file mới trong folder admin
+// b3 include đến file vừa cắt
 
 // cắt footer tương tự như sidebar
 
+// tối ưu hóa lập trình giao diện danh sách
+//b1 tạo giao diện danh sách chung
+//b2 tạo đường dẫn cho giao diện
+Route::get('admin/listing/{model}', [ListingController::class, 'index'])->name('listing.index');
+//b3 tạo controller để điều khiển đường dẫn
+//b4 khai báo hàm index trong file controller vừa tạo, khai báo vào file route.web
+//b5 

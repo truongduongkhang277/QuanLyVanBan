@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ListingController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -47,5 +48,9 @@ Route::get('admin/login', function () {
     return view('admin.login');
 });
 
+Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
 Route::post('admin/login', [AdminController::class, 'loginPost'])->name('admin.loginPost');
 Route::get('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+Route::get('admin/danhsach/{model}', [ListingController::class, 'index'])->name('danhsach.index');
