@@ -63,6 +63,7 @@ $fa-font-path:"../webfonts";
 npm run dev
 
 // giao diện dự án tương đối hoàn thành
+// chuẩn hóa giao diện về tiếng việt
 
 // thêm $table->tinyInteger('gender'); để tạo dòng giới tính trong bảng dữ liệu -> thay đổi config/database mysql: 'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
 // khởi chạy lệnh migrate:fresh để làm mới database
@@ -123,7 +124,14 @@ php artisan make:controller AdminController
 // tối ưu hóa lập trình giao diện danh sách
 //b1 tạo giao diện danh sách chung
 //b2 tạo đường dẫn cho giao diện
-Route::get('admin/listing/{model}', [ListingController::class, 'index'])->name('listing.index');
+Route::get('admin/danhsach/{model}', [ListingController::class, 'index'])->name('danhsach.index');
+-- truyền vào giá trị model từ frontend, chuyển trang đến từng giá trị được truyền tương ứng
 //b3 tạo controller để điều khiển đường dẫn
 //b4 khai báo hàm index trong file controller vừa tạo, khai báo vào file route.web
-//b5 
+
+//b5 tạo các model và migrate tương ứng cho từng dữ liệu.
+php artisan make:model ... -m 
+
+//b6 khai báo biến từ model vừa tạo
+//b7 lọc danh sách lấy được theo số lượng
+//truyền biến vừa lấy được từ model sang view thông qua vòng lặp foreach

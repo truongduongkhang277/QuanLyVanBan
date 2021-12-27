@@ -7,8 +7,17 @@ use Illuminate\Support\Facades\Auth;
 
 class ListingController extends Controller
 {
-    public function index(Request $request, $model) {
+    public function index(Request $request, $modelName) {
         $adminUser = Auth::guard('admin')->user();
-        return view('admin.listing', ['user'=>$adminUser]);
+
+        $model = '\App\Models\\'.ucfirst($modelName);
+
+        // trỏ đến hàm scopeSearch trong model để rút gọn code
+        $records = $model::paginate(15);
+
+        return view('admin.listing', [
+            'user' => $adminUser,
+            'records' => $records,
+        ]);
     }
 }

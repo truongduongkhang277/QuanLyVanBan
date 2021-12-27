@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCoQuansTable extends Migration
+class CreateDoKhansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateCoQuansTable extends Migration
      */
     public function up()
     {
-        Schema::create('co_quan', function (Blueprint $table) {
+        Schema::create('do_khan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('co_quan');
-            $table->string('ki_hieu')->nullable();
-            $table->string('dia_chi')->nullable();
+            $table->string('do_khan');
             $table->string('trang_thai')->default(0);            
             $table->string('ghi_chu')->nullable();
             $table->timestamps();
@@ -31,6 +29,6 @@ class CreateCoQuansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('co_quan');
+        Schema::dropIfExists('do_khan');
     }
 }
