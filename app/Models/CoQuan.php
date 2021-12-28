@@ -9,6 +9,8 @@ use App\Models\Base;
 class CoQuan extends Base
 {
     use HasFactory;
+
+    public $title = 'Danh sách cơ quan';
     
     // tên bảng trong database
     protected $table = 'co_quan';

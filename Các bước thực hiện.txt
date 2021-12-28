@@ -144,3 +144,4 @@ php artisan make:model ... -m
 // khởi tạo model Base để chứa những thuộc tính chung giữa các model
 // tạo hàm defaultListingConfig trong Base để hiển thị các thuộc tính chung trong danh sách
 // chuyển extends model thành extends base
+

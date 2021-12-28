@@ -10,6 +10,8 @@ class DoKhan extends Base
 {
     use HasFactory;
     
+    public $title = 'Danh sách độ khẩn';
+
     // tên bảng trong database
     protected $table = 'do_khan';
 

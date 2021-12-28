@@ -9,6 +9,8 @@ use App\Models\Base;
 class HinhThuc extends Base
 {
     use HasFactory;
+
+    public $title = 'Danh sách hình thức';
     
     // tên bảng trong database
     protected $table = 'hinh_thuc';

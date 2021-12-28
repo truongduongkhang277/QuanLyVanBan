@@ -26,9 +26,13 @@ class AdminController extends Controller
         }
     }
 
+    // chuyển về đăng nhập của người dùng
     public function logout(Request $request){
         // var_dump($request->email);exit;
-        Auth::guard('admin')->logout();
-        return redirect('admin/login');
+        // Auth::guard('admin')->logout();
+        // return redirect('admin/login');
+
+        Auth::guard('web')->logout();
+        return redirect('login');
     }
 }

@@ -9,6 +9,8 @@ use App\Models\Base;
 class VanBanDi extends Base
 {
     use HasFactory;
+
+    public $title = 'Danh sách văn bản đi';
     
     // tên bảng trong database
     protected $table = 'van_ban_di';
@@ -36,7 +38,7 @@ class VanBanDi extends Base
             array(
                 'field' => 'ngay_gui',
                 'name' => 'Ngày gửi',
-                'type' => 'text'
+                'type' => 'date'
             ),
             array(
                 'field' => 'so_trang',
@@ -61,7 +63,7 @@ class VanBanDi extends Base
             array(
                 'field' => 'han_xu_ly',
                 'name' => 'Hạn xử lý',
-                'type' => 'text'
+                'type' => 'date'
             ),            
             array(
                 'field' => 'trang_thai',

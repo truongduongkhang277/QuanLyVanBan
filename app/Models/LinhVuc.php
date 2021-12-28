@@ -9,6 +9,8 @@ use App\Models\Base;
 class LinhVuc extends Base
 {
     use HasFactory;
+
+    public $title = 'Danh sách lĩnh vực';
     
     // tên bảng trong database
     protected $table = 'linh_vuc';

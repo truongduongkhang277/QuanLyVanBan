@@ -10,6 +10,8 @@ class DoMat extends Base
 {
     use HasFactory;
     
+    public $title = 'Danh sách độ mật';
+
     // tên bảng trong database
     protected $table = 'do_mat';
 

@@ -9,6 +9,8 @@ use App\Models\Base;
 class TheLoai extends Base
 {
     use HasFactory;
+
+    public $title = 'Danh sách thể loại';
     
     // tên bảng trong database
     protected $table = 'the_loai';

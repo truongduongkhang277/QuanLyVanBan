@@ -24,6 +24,7 @@ class ListingController extends Controller
             'user' => $adminUser,
             'records' => $records,
             'configs' => $configs,
+            'title' => $model->title,
         ]);
     }
 }

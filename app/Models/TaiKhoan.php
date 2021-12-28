@@ -9,6 +9,8 @@ use App\Models\Base;
 class TaiKhoan extends Base
 {
     use HasFactory;
+
+    public $title = 'Danh sách tài khoản';
     
     // tên bảng trong database
     protected $table = 'users';
