@@ -12,12 +12,13 @@
                     <h1 class="m-0"><?=$title?></h1>
                 </div>
                 <!-- /.col -->
-                <!-- <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
+                <div class="col-sm-6 ">
+                    <button type="submit" class="btn btn-primary float-right">Thêm mới</button>
+                    <!-- <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
                         <li class="breadcrumb-item active">Starter Page</li>
-                    </ol>
-                </div> -->
+                    </ol> -->
+                </div>
                 <!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -32,8 +33,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 250px;">
-                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Tìm kiếm">
+                                <div class="input-group input-group-sm" style="width: 200px;">
+                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-default">
                                             <i class="fas fa-search"></i>
