@@ -82,7 +82,7 @@ $menu = config('menu');
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('danhsach.index', ['model'=>'VanBanDen'])}}" class="nav-link">
+                    <a href="{{route('danhsach.index', ['model'=>'VanBanDi'])}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Danh sách văn bản đi</p>
                     </a>
@@ -119,7 +119,7 @@ $menu = config('menu');
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('danhsach.index', ['model'=>'VanBanDen'])}}" class="nav-link">
+                    <a href="{{route('danhsach.index', ['model'=>'VanBanDi'])}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Danh sách văn bản đi</p>
                     </a>

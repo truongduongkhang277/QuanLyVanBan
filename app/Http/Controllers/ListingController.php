@@ -12,12 +12,18 @@ class ListingController extends Controller
 
         $model = '\App\Models\\'.ucfirst($modelName);
 
+        // khai báo model mới
+        $model = new $model;
+        // lấy hàm listingConfig
+        $configs = $model->listingConfig(); 
+
         // trỏ đến hàm scopeSearch trong model để rút gọn code
         $records = $model::paginate(15);
 
         return view('admin.listing', [
             'user' => $adminUser,
             'records' => $records,
+            'configs' => $configs,
         ]);
     }
 }

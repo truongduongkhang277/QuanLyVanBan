@@ -135,3 +135,12 @@ php artisan make:model ... -m
 //b6 khai báo biến từ model vừa tạo
 //b7 lọc danh sách lấy được theo số lượng
 //truyền biến vừa lấy được từ model sang view thông qua vòng lặp foreach
+// để phân trang, thêm Paginator::useBootstrap(); vào file app.providers.appServiceProvider.boot
+
+// tùy chỉnh giao diện dựa theo từng model riêng
+//b1 tạo function listingConfig trong model chứa các thuộc tính của database
+//b2 khai báo model tạo ListingController
+
+// khởi tạo model Base để chứa những thuộc tính chung giữa các model
+// tạo hàm defaultListingConfig trong Base để hiển thị các thuộc tính chung trong danh sách
+// chuyển extends model thành extends base

@@ -6,25 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Base;
 
-class CoQuan extends Base
+class LinhVuc extends Base
 {
     use HasFactory;
     
     // tên bảng trong database
-    protected $table = 'co_quan';
-
-    //protected $fillable = ['co_quan', 'ki_hieu', 'dia_chi', 'trang_thai', 'ghi_chu'];
-    
-    //thêm local scope
-
-    public function scopeSearch($query)
-    {
-        if($key = request()->key){
-            $query = $query->where('co_quan', 'like', '%'.$key.'%');
-        }
-
-        return $query;
-    }
+    protected $table = 'linh_vuc';
 
     // cấu hình giao diện hiển thị theo các trường trong database
     public function listingConfig(){
@@ -37,23 +24,18 @@ class CoQuan extends Base
                 'type' => 'text'
             ),
             array(
-                'field' => 'co_quan',
-                'name' => 'Tên cơ quan',
-                'type' => 'text'
-            ),
-            array(
-                'field' => 'ki_hieu',
-                'name' => 'Kí hiệu',
-                'type' => 'text'
-            ),
-            array(
-                'field' => 'dia_chi',
-                'name' => 'Địa chỉ',
+                'field' => 'linh_vuc',
+                'name' => 'Lĩnh vực',
                 'type' => 'text'
             ),
             array(
                 'field' => 'trang_thai',
-                'name' => 'TT',
+                'name' => 'Trạng thái',
+                'type' => 'text'
+            ),            
+            array(
+                'field' => 'ghi_chu',
+                'name' => 'Ghi chú',
                 'type' => 'text'
             ),
         );
@@ -61,5 +43,4 @@ class CoQuan extends Base
         // nhập mảng defaultListingConfig vào listingConfig
         return array_merge($listingConfigs, $defaultListingConfigs);
     }
-
 }
