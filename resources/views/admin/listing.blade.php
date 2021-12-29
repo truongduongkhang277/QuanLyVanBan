@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0"><?=$title?></h1>
+                    <h1 class="m-0">Danh sách <?= $title ?></h1>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-6 ">
@@ -33,14 +33,29 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 200px;">
-                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                <form class="input-group input-group-sm" style="width: 250px;" 
+                                action="{{route('danhsach.index', ['model'=>$modelName])}}" method="POST">
+                                    @csrf
+                                    <!-- tùy theo giá trị của filter mà có từng field khác nhau
+                                        trước mắt chỉ mới có tìm kiếm bằng 1 field duy nhất -->
+                                    <?php
+                                    foreach ($configs as $config) {
+                                        if (!empty($config['filter'])) {
+                                            switch ($config['filter']) {
+                                                case "like": ?>
+                                                    <input type="text" name="<?= $$config['field'] ?>" class="form-control float-right" placeholder="Tìm kiếm bằng <?= $config['name'] ?>">
+                                                <?php
+                                                    break;
+                                            }
+                                        }
+                                    }
+                                    ?>
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-default">
                                             <i class="fas fa-search"></i>
                                         </button>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <!-- /.card-header -->

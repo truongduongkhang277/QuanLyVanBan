@@ -10,7 +10,7 @@ class CoQuan extends Base
 {
     use HasFactory;
 
-    public $title = 'Danh sách cơ quan';
+    public $title = 'cơ quan';
     
     // tên bảng trong database
     protected $table = 'co_quan';
@@ -41,7 +41,8 @@ class CoQuan extends Base
             array(
                 'field' => 'co_quan',
                 'name' => 'Tên cơ quan',
-                'type' => 'text'
+                'type' => 'text',
+                'filter' => 'like',
             ),
             array(
                 'field' => 'ki_hieu',

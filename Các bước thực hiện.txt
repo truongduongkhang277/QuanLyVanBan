@@ -145,3 +145,13 @@ php artisan make:model ... -m
 // tạo hàm defaultListingConfig trong Base để hiển thị các thuộc tính chung trong danh sách
 // chuyển extends model thành extends base
 
+// tạo chức năng tìm kiếm tại trang hiển thị danh sách
+// thêm filter trong model
+// tạo hàm getFilter trong model Base để lấy filter của từng field
+
+// tạo chức năng thêm mới của từng model
+// khởi tạo controller creating
+// tạo giao diện creating chung
+// khai báo đường dẫn tại router/web.php
+
+// chức năng chỉnh sửa của từng model

@@ -10,7 +10,7 @@ class TaiKhoan extends Base
 {
     use HasFactory;
 
-    public $title = 'Danh sách tài khoản';
+    public $title = 'tài khoản';
     
     // tên bảng trong database
     protected $table = 'users';
@@ -33,7 +33,8 @@ class TaiKhoan extends Base
             array(
                 'field' => 'email',
                 'name' => 'Email',
-                'type' => 'text'
+                'type' => 'text',
+                'filter' => 'like',
             ),
         );
 

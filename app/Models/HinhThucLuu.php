@@ -10,7 +10,7 @@ class HinhThucLuu extends Base
 {
     use HasFactory;
 
-    public $title = 'Danh sách hình thức lưu';
+    public $title = 'hình thức lưu';
     
     // tên bảng trong database
     protected $table = 'hinh_thuc_luu';
@@ -28,7 +28,8 @@ class HinhThucLuu extends Base
             array(
                 'field' => 'hinh_thuc_luu',
                 'name' => 'Hình thức lưu',
-                'type' => 'text'
+                'type' => 'text',
+                'filter' => 'like',
             ),
             array(
                 'field' => 'trang_thai',

@@ -10,7 +10,7 @@ class DoMat extends Base
 {
     use HasFactory;
     
-    public $title = 'Danh sách độ mật';
+    public $title = 'độ mật';
 
     // tên bảng trong database
     protected $table = 'do_mat';
@@ -28,7 +28,8 @@ class DoMat extends Base
             array(
                 'field' => 'do_mat',
                 'name' => 'Độ mật',
-                'type' => 'text'
+                'type' => 'text',
+                'filter' => 'like',
             ),
             array(
                 'field' => 'trang_thai',

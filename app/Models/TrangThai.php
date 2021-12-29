@@ -10,7 +10,7 @@ class TrangThai extends Base
 {
     use HasFactory;
 
-    public $title = 'Danh sách trạng thái';
+    public $title = 'trạng thái';
     
     // tên bảng trong database
     protected $table = 'trang_thai';
@@ -28,7 +28,8 @@ class TrangThai extends Base
             array(
                 'field' => 'ten_trang_thai',
                 'name' => 'Tên trạng thái',
-                'type' => 'text'
+                'type' => 'text',
+                'filter' => 'like',
             ),
             array(
                 'field' => 'trang_thai',

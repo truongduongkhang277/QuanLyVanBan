@@ -10,7 +10,7 @@ class DoKhan extends Base
 {
     use HasFactory;
     
-    public $title = 'Danh sách độ khẩn';
+    public $title = 'độ khẩn';
 
     // tên bảng trong database
     protected $table = 'do_khan';
@@ -28,7 +28,8 @@ class DoKhan extends Base
             array(
                 'field' => 'do_khan',
                 'name' => 'Độ khẩn',
-                'type' => 'text'
+                'type' => 'text',
+                'filter' => 'like',
             ),
             array(
                 'field' => 'trang_thai',

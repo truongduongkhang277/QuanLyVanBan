@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CreatingController;
 use App\Http\Controllers\ListingController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
@@ -53,4 +54,10 @@ Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admi
 Route::post('admin/login', [AdminController::class, 'loginPost'])->name('admin.loginPost');
 Route::get('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
+// hiển thị danh sách
 Route::get('admin/danhsach/{model}', [ListingController::class, 'index'])->name('danhsach.index');
+// hiển thị kết quả tìm kiếm
+Route::post('admin/danhsach/{model}', [ListingController::class, 'index'])->name('danhsach.index');
+
+// Route::get('admin/them/{model}', [CreatingController::class, 'index'])->name('danhsach.create');
+// Route::post('admin/them/{model}', [CreatingController::class, 'index'])->name('danhsach.store');

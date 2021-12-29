@@ -17,14 +17,18 @@ class ListingController extends Controller
         // lấy hàm listingConfig
         $configs = $model->listingConfig(); 
 
+        // lấy hàm getFilter
+        $conditions = $model->getFilter($request, $configs);
+        
         // trỏ đến hàm scopeSearch trong model để rút gọn code
-        $records = $model::paginate(15);
-
+        $records = $model::where($conditions)->paginate(15);
+//var_dump($conditions); exit;
         return view('admin.listing', [
             'user' => $adminUser,
             'records' => $records,
             'configs' => $configs,
             'title' => $model->title,
+            'modelName' => $modelName,
         ]);
     }
 }

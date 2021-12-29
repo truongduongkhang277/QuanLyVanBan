@@ -10,7 +10,7 @@ class VanBanDen extends Base
 {
     use HasFactory;
 
-    public $title = 'Danh sách văn bản đến';
+    public $title = 'văn bản đến';
     
     // tên bảng trong database
     protected $table = 'van_ban_den';
@@ -48,7 +48,8 @@ class VanBanDen extends Base
             array(
                 'field' => 'trich_yeu',
                 'name' => 'Trích yếu',
-                'type' => 'text'
+                'type' => 'text',
+                'filter' => 'like',
             ),
             array(
                 'field' => 'ds_file',

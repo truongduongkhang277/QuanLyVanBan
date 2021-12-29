@@ -10,7 +10,7 @@ class TheLoai extends Base
 {
     use HasFactory;
 
-    public $title = 'Danh sách thể loại';
+    public $title = 'thể loại';
     
     // tên bảng trong database
     protected $table = 'the_loai';
@@ -28,7 +28,8 @@ class TheLoai extends Base
             array(
                 'field' => 'the_loai',
                 'name' => 'Thể loại',
-                'type' => 'text'
+                'type' => 'text',
+                'filter' => 'like',
             ),
             array(
                 'field' => 'trang_thai',

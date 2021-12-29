@@ -10,7 +10,7 @@ class LinhVuc extends Base
 {
     use HasFactory;
 
-    public $title = 'Danh sách lĩnh vực';
+    public $title = 'lĩnh vực';
     
     // tên bảng trong database
     protected $table = 'linh_vuc';
@@ -28,7 +28,8 @@ class LinhVuc extends Base
             array(
                 'field' => 'linh_vuc',
                 'name' => 'Lĩnh vực',
-                'type' => 'text'
+                'type' => 'text',
+                'filter' => 'like',
             ),
             array(
                 'field' => 'trang_thai',

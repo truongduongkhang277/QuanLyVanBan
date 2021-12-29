@@ -39,4 +39,39 @@ class Base extends Model
             ),
         );
     }
+
+    // lấy giá trị field của model
+    public function getFilter($request, $configs){
+        // khai báo biến condition
+        $conditions = [];
+        if($request->method() == "POST"){
+            foreach($configs as $config){
+                // field nào có giá trị filter thì lất
+                if(!empty($config['filter'])){
+                    // giá trị xuất ta lấy từ tên field khai báo tại model
+                    $value = $request->input($config['field']);
+
+                    // tùy theo trường hợp mà có cách xử lý riêng
+                    switch($config['filter']){
+                        case "equal":
+                            $conditions[] = [
+                                'field' => $config['field'],
+                                'condition' => '=',
+                                'value' => $value,
+                            ];
+                            break;
+                        
+                        case "like":
+                            $conditions[] = [
+                                'field' => $config['field'],
+                                'condition' => '%',
+                                'value' => '%'.$value.'%',
+                            ];
+                            break;
+                    }
+                }
+            }
+        }
+        return $conditions;
+    }
 }
