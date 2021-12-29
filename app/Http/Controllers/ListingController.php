@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class ListingController extends Controller
 {
     public function index(Request $request, $modelName) {
-        $adminUser = Auth::guard('admin')->user();
+        $adminUser = Auth::guard('web')->user();
 
         $model = '\App\Models\\'.ucfirst($modelName);
 
@@ -21,7 +21,7 @@ class ListingController extends Controller
         $conditions = $model->getFilter($request, $configs);
         
         // trỏ đến hàm scopeSearch trong model để rút gọn code
-        $records = $model::where($conditions)->paginate(15);
+        $records = $model::paginate(15);
 //var_dump($conditions); exit;
         return view('admin.listing', [
             'user' => $adminUser,

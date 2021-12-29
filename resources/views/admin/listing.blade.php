@@ -38,18 +38,7 @@
                                     @csrf
                                     <!-- tùy theo giá trị của filter mà có từng field khác nhau
                                         trước mắt chỉ mới có tìm kiếm bằng 1 field duy nhất -->
-                                    <?php
-                                    foreach ($configs as $config) {
-                                        if (!empty($config['filter'])) {
-                                            switch ($config['filter']) {
-                                                case "like": ?>
-                                                    <input type="text" name="<?= $$config['field'] ?>" class="form-control float-right" placeholder="Tìm kiếm bằng <?= $config['name'] ?>">
-                                                <?php
-                                                    break;
-                                            }
-                                        }
-                                    }
-                                    ?>
+                                    <input type="text" class="form-control float-right" placeholder="Tìm kiếm bằng ">                                                
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-default">
                                             <i class="fas fa-search"></i>

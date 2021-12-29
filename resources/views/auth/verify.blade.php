@@ -16,7 +16,7 @@
 
                     {{ __('Trước khi tiếp tục, vui lòng kiểm tra email của bạn để biết liên kết xác minh.') }}
                     {{ __('Nếu bạn không nhận được email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                    <form class="d-inline" method="POST" action="{{ route('verification.send') }}">
                         @csrf
                         <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('bấm vào đây để thực hiện yêu cầu khác.') }}</button>.
                     </form>
