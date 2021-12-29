@@ -59,7 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <img src="https://adminlte.io/themes/v3/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="{{route('home')}}" class="d-block">Alexander Pierce</a>
+            <a href="{{route('home')}}" class="d-block"><?= $user->name ?></a>
           </div>
         </div>
 
